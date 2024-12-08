@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote name="aosp" fetch=".." review="https://android-review.googlesource.com/"/>
-  <remote name="fdroid" fetch="https://gitlab.com/fdroid/"/>
-  <remote name="gitlab" fetch="https://gitlab.com/"/>
-  <remote name="phh" fetch="https://github.com/phhusson/"/>
-  <remote name="relan" fetch="https://github.com/relan/"/>
-  <remote name="seedvault-github" fetch="https://github.com/seedvault-app/"/>
+  <remote name="aosp" fetch="http://android.googlesource.com" review="http://android-review.googlesource.com"/>
+  <remote name="fdroid" fetch="http://gitlab.com/fdroid"/>
+  <remote name="gitlab" fetch="http://gitlab.com"/>
+  <remote name="phh" fetch="http://github.com/phhusson"/>
+  <remote name="relan" fetch="http://github.com/relan"/>
+  <remote name="seedvault-github" fetch="http://github.com/seedvault-app"/>
   
   <default remote="aosp" revision="refs/tags/android-11.0.0_r40" sync-j="4"/>
   
