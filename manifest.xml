@@ -2,16 +2,12 @@
 <manifest>
   <remote fetch="http://android.googlesource.com" name="aosp" review="http://android-review.googlesource.com"/>
   <remote fetch="http://gitlab.com/fdroid" name="fdroid"/>
-  <remote fetch="http://gitlab.opengapps.org/opengapps" name="opengapps"/>
   <remote fetch="http://github.com/opengapps" name="opengappsold"/>
   <remote fetch="http://github.com/phhusson" name="phh"/>
   
   <default remote="aosp" revision="refs/tags/android-8.1.0_r65" sync-j="4"/>
   
-  <project clone-depth="1" name="all" path="vendor/opengapps/sources/all" remote="opengapps" revision="cfdf469d237983ff2a700a976a87bb1825853d16" upstream="master"/>
   <project name="aosp_build" path="vendor/opengapps/build" remote="opengappsold" revision="86370102e9d0338922593dd5fbb83a06cdd6415e" upstream="master"/>
-  <project clone-depth="1" name="arm" path="vendor/opengapps/sources/arm" remote="opengapps" revision="81b77a448b6b73198037d861b9290a17190f41f7" upstream="master"/>
-  <project clone-depth="1" name="arm64" path="vendor/opengapps/sources/arm64" remote="opengapps" revision="61ef39e275e50723606186e0d049db2ce788eff9" upstream="master"/>
   <project groups="device,fugu,broadcom_pdk,pdk" name="device/asus/fugu" revision="fc652d7c955dd361768490476998f86222f02730" upstream="refs/tags/android-8.1.0_r65"/>
   <project clone-depth="1" groups="device,fugu,broadcom_pdk,pdk" name="device/asus/fugu-kernel" revision="6004d2ea025dbd60d0e16bb2ca2578b81496dc16" upstream="refs/tags/android-8.1.0_r65"/>
   <project groups="pdk-cw-fs,pdk" name="device/common" revision="f87323bed1150074fee5a0ad64d76aaed0c58f00" upstream="refs/tags/android-8.1.0_r65"/>
@@ -621,8 +617,6 @@
   <project name="vendor_interfaces" path="vendor/interfaces" remote="phh" revision="530f9fb6d8d7c02dc0b9862840d1fdb750d84256" upstream="master"/>
   <project name="vendor_vndk" path="vendor/vndk" remote="phh" revision="6c506aafcde5e3b8b3577f424205f0de7606254e" upstream="master"/>
   <project name="vendor_vndk-tests" path="vendor/vndk-tests" remote="phh" revision="ddabc53d94bf8b85837c7b3f51339647e83b8ca3" upstream="master"/>
-  <project clone-depth="1" name="x86" path="vendor/opengapps/sources/x86" remote="opengapps" revision="82b6e7bad5a55d2e68dbe8afb89a435a558ee6b3" upstream="master"/>
-  <project clone-depth="1" name="x86_64" path="vendor/opengapps/sources/x86_64" remote="opengapps" revision="3619ced8b27038120b9636cacb57ec700e751a5b" upstream="master"/>
   
   <repo-hooks enabled-list="pre-upload" in-project="platform/tools/repohooks"/>
 </manifest>
