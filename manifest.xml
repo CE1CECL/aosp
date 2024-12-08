@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <remote fetch=".." name="aosp" review="https://android-review.googlesource.com/"/>
-  <remote fetch="https://gitlab.com/fdroid/" name="fdroid"/>
-  <remote fetch="http://gitlab.nezorfla.me/opengapps/" name="opengapps"/>
-  <remote fetch="http://github.com/opengapps/" name="opengappsold"/>
-  <remote fetch="https://github.com/phhusson/" name="phh"/>
+  <remote fetch="http://android.googlesource.com" name="aosp" review="http://android-review.googlesource.com"/>
+  <remote fetch="http://gitlab.com/fdroid" name="fdroid"/>
+  <remote fetch="http://gitlab.nezorfla.me/opengapps" name="opengapps"/>
+  <remote fetch="http://github.com/opengapps" name="opengappsold"/>
+  <remote fetch="http://github.com/phhusson" name="phh"/>
   
   <default remote="aosp" revision="refs/tags/android-8.1.0_r65" sync-j="4"/>
   
