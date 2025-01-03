@@ -3,16 +3,12 @@
   <remote fetch="http://android.googlesource.com" name="aosp" review="http://android-review.googlesource.com"/>
   <remote fetch="http://gitlab.com/aosp-security" name="aosp-security"/>
   <remote fetch="http://gitlab.com/fdroid" name="fdroid"/>
-  <remote fetch="http://gitlab.opengapps.org/opengapps" name="opengapps"/>
   <remote fetch="http://github.com/opengapps" name="opengappsold"/>
   <remote fetch="http://github.com/phhusson" name="phh"/>
   
   <default remote="aosp-security" revision="refs/heads/android-9.0.0_r51-r47" sync-j="4"/>
   
-  <project clone-depth="1" name="all" path="vendor/opengapps/sources/all" remote="opengapps" revision="e299c22c1f8574f9491af12975c6239de3239861" upstream="master"/>
   <project name="aosp_build" path="vendor/opengapps/build" remote="opengappsold" revision="50a684d84e7f3522dfad651f2e29f8775ec3b212" upstream="master"/>
-  <project clone-depth="1" name="arm" path="vendor/opengapps/sources/arm" remote="opengapps" revision="e301c3bedfd1df9a033259221f4f42d94d1561f8" upstream="master"/>
-  <project clone-depth="1" name="arm64" path="vendor/opengapps/sources/arm64" remote="opengapps" revision="4043427db09245af27f855d6dc9ed79415e3bc21" upstream="master"/>
   <project groups="pdk-cw-fs,pdk" name="device_common" path="device/common" revision="7913ab351152e6ab3fb2ca11e97dc547faaf7fb3" upstream="refs/heads/android-9.0.0_r51-r47"/>
   <project groups="pdk" name="device_generic_arm64" path="device/generic/arm64" revision="3fd397464154b05b19137618625989ac1d0fdecd" upstream="refs/heads/android-9.0.0_r51-r47"/>
   <project groups="pdk" name="device_generic_armv7-a-neon" path="device/generic/armv7-a-neon" revision="9e96e041bf3c9d5b57b11f921c6339e076478a7a" upstream="refs/heads/android-9.0.0_r51-r47"/>
@@ -705,6 +701,4 @@
   <project name="vendor_magisk" path="vendor/magisk" remote="phh" revision="76b5d4f3a5802e4c50bfb6cfdf0dd52413bd4792" upstream="master"/>
   <project name="vendor_vndk" path="vendor/vndk" remote="phh" revision="6c506aafcde5e3b8b3577f424205f0de7606254e" upstream="master"/>
   <project name="vendor_vndk-tests" path="vendor/vndk-tests" remote="phh" revision="05737a966b796795c71b562fac41283fc1f12e6e" upstream="master"/>
-  <project clone-depth="1" name="x86" path="vendor/opengapps/sources/x86" remote="opengapps" revision="f1378916c3e6cb5ea5264aa07899a40a8eb6d787" upstream="master"/>
-  <project clone-depth="1" name="x86_64" path="vendor/opengapps/sources/x86_64" remote="opengapps" revision="dc697b797cb19ecf89ad8cafd15b980f85a963ad" upstream="master"/>
 </manifest>
