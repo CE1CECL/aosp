@@ -1,0 +1,37 @@
+name: oreo-mr1-security-release
+on: [workflow_dispatch, push]
+jobs:
+  oreo-mr1-security-release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9999
+    steps:
+    - name: checkout
+      uses: actions/checkout@v6
+    - name: rm
+      run: sudo rm -rfv .git
+    - name: update
+      run: sudo apt --yes --force-yes update
+    - name: install
+      run: sudo apt --yes --force-yes install --no-install-suggests --no-install-recommends repo
+    - name: email
+      run: sudo git config --global user.email "you@example.com"
+    - name: name
+      run: sudo git config --global user.name "Your Name"
+    - name: chown
+      run: sudo chown -Rv 0:0 ./
+    - name: chmod
+      run: sudo chmod -Rv 7777 ./
+    - name: sh
+      run: sudo ./oreo-mr1-security-release.sh
+    - name: manifest
+      uses: actions/upload-artifact@v6
+      with:
+         name: oreo-mr1-security-release.xml
+         path: oreo-mr1-security-release.xml
+    - name: tar
+      run: sudo tar --acls --selinux --xattrs -I "zstd --ultra -22 -v -T0 -r --format=zstd" -cvf oreo-mr1-security-release.tar.zst ./oreo-mr1-security-release/
+    - name: upload
+      uses: actions/upload-artifact@v6
+      with:
+         name: oreo-mr1-security-release.tar.zst
+         path: oreo-mr1-security-release.tar.zst
