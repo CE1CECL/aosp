@@ -7,12 +7,24 @@ jobs:
     steps:
     - name: checkout
       uses: actions/checkout@v6
+    - name: swapoff
+      run: sudo swapoff /swapfile
+    - name: cleanup
+      run: sudo rm -rfv /swapfile /usr/src /usr/lib/jvm /home/linuxbrew /home/packer /root /usr/share/dotnet /usr/share/swift /usr/share/miniconda /usr/lib/google-cloud-sdk /var/lib/docker /usr/local /opt /home/runner/.*
+    - name: mkdir
+      run: sudo mkdir -pv /swapfile /usr/src /usr/lib/jvm /home/linuxbrew /home/packer /root /usr/share/dotnet /usr/share/swift /usr/share/miniconda /usr/lib/google-cloud-sdk /var/lib/docker /usr/local /opt
     - name: rm
       run: sudo rm -rfv .git
     - name: update
       run: sudo apt --yes --force-yes update
     - name: install
       run: sudo apt --yes --force-yes install --no-install-suggests --no-install-recommends repo
+    - name: clean
+      run: sudo apt --yes --force-yes clean
+    - name: autoclean
+      run: sudo apt --yes --force-yes autoclean
+    - name: autoremove
+      run: sudo apt --yes --force-yes autoremove
     - name: email
       run: sudo git config --global user.email "you@example.com"
     - name: name

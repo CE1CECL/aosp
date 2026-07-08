@@ -1,7 +1,7 @@
-name: android13-security-release
+name: android17-release
 on: [workflow_dispatch, push]
 jobs:
-  android13-security-release:
+  android17-release:
     runs-on: ubuntu-latest
     timeout-minutes: 9999
     steps:
@@ -34,16 +34,16 @@ jobs:
     - name: chmod
       run: sudo chmod -Rv 7777 ./
     - name: sh
-      run: sudo ./android13-security-release.sh
+      run: sudo ./android17-release.sh
     - name: manifest
       uses: actions/upload-artifact@v6
       with:
-         name: android13-security-release.xml
-         path: android13-security-release.xml
+         name: android17-release.xml
+         path: android17-release.xml
     - name: tar
-      run: sudo tar --acls --selinux --xattrs -I "zstd --ultra -22 -v -T0 -r --format=zstd" -cvf android13-security-release.tar.zst ./android13-security-release/
+      run: sudo tar --acls --selinux --xattrs -I "zstd --ultra -22 -v -T0 -r --format=zstd" -cvf android17-release.tar.zst ./android17-release/
     - name: upload
       uses: actions/upload-artifact@v6
       with:
-         name: android13-security-release.tar.zst
-         path: android13-security-release.tar.zst
+         name: android17-release.tar.zst
+         path: android17-release.tar.zst
